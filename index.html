@@ -157,6 +157,7 @@
               <span class="chip">Audio</span>
             </div>
             <div class="result">Menampilkan teks terjemahan dari gerakan bahasa isyarat.</div>
+
           </div>
 
           <div class="feature-card">
@@ -198,6 +199,50 @@
 
         </div>
       </div>
+      <!-- DEMO DETEKSI OBJEK -->
+      <div class="object-demo" id="demo-deteksi">
+
+        <div class="section-head">
+          <div class="tag">COBA FITUR</div>
+          <h2>Deteksi Objek Langsung</h2>
+          <p>
+            Aktifkan kamera untuk mengenali objek di sekitar.
+            Pemrosesan AI dilakukan langsung di browser.
+          </p>
+        </div>
+
+        <div class="camera-container">
+          <video id="camera" autoplay playsinline muted></video>
+          <canvas id="overlay"></canvas>
+        </div>
+
+        <div class="object-controls">
+          <button type="button" id="startDetection">
+            Mulai Kamera
+          </button>
+
+          <button type="button" id="stopDetection" disabled>
+            Hentikan Kamera
+          </button>
+
+
+
+          <!-- TEMPEL KODE CHECKBOX DI SINI -->
+          <label class="audio-toggle">
+            <input type="checkbox" id="audioEnabled">
+            Aktifkan suara deteksi
+          </label>
+
+        </div>
+
+      </div>
+
+      <p id="objectResult" role="status" aria-live="polite">
+        Model belum dimuat.
+      </p>
+
+      </div>
+      <!-- AKHIR DEMO DETEKSI OBJEK -->
     </section>
 
     <!-- PROSES PRODUKSI -->
@@ -230,6 +275,66 @@
         </div>
       </div>
     </section>
+
+    <!-- DEMO SIGN LANGUAGE -->
+    <section id="demo-isyarat">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="tag">COBA FITUR 02</div>
+          <h2>Sign Language Interpreter</h2>
+          <p>
+            Penerjemah bahasa isyarat menjadi teks dan suara.
+          </p>
+        </div>
+
+        <div class="sign-demo">
+          <div class="sign-camera">
+            <video id="signCamera" autoplay playsinline muted></video>
+            <canvas id="signOverlay"></canvas>
+          </div>
+
+          <div class="sign-actions">
+            <a href="./jemari/web/index.html" class="btn btn-ghost">
+              Coba Penerjemah BISINDO →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- AKHIR DEMO SIGN LANGUAGE -->
+
+    <div class="feature-card">
+      <span class="num mono"> AR/VR</span>
+
+      <div class="ficon">
+        <!-- Gunakan ikon VR yang sudah ada di HTML kamu -->
+      </div>
+
+      <h3>Virtual Reality & Augmented Reality</h3>
+
+      <p>
+        Menghadirkan pengalaman belajar interaktif berbasis teknologi
+        Virtual Reality (VR) dan Augmented Reality (AR) untuk mendukung
+        pendidikan inklusif. Pengguna dapat menjelajahi lingkungan virtual
+        dan menikmati pengalaman belajar yang lebih imersif.
+      </p>
+
+      <div class="outputs">
+        <span class="chip">Virtual Exhibition</span>
+        <span class="chip">Inclusive Learning</span>
+        <span class="chip">Interactive Experience</span>
+      </div>
+
+      <div class="result">
+        Jelajahi ruang virtual RDZ Visualab melalui Frame VR.
+      </div>
+
+      <a href="https://framevr.io/ramadhan01" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">
+        Jelajahi Virtual Reality →
+      </a>
+    </div>
+
+
 
     <!-- KONTAK -->
     <section id="kontak">
@@ -302,6 +407,11 @@
   <script> src = "script.js" </script>
 
 
+
+  <!-- Script website yang sudah ada tetap dipertahankan -->
+
+  <script type="module" src="./js/object-detection.js"></script>
+  <script type="module" src="./js/sign-recognition.js"></script>
 </body>
 
 </html>

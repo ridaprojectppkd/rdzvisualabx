@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jemari — Sign Language Translator</title>
+    <meta
+      name="description"
+      content="Translate BISINDO (Indonesian Sign Language) hand signs into text and speech in real time, entirely on your device."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">🤟</span>
+        <div>
+          <h1>Jemari</h1>
+          <p class="brand-sub">From fingertip signs to spoken words</p>
+        </div>
+      </div>
+      <div class="model-badge" id="modelBadge">Loading model…</div>
+    </header>
+
+    <main class="layout">
+      <!-- Left column: camera -->
+      <section class="card stage" aria-label="Camera preview">
+        <div class="mirror" id="mirror">
+          <video id="video" playsinline muted></video>
+          <canvas id="overlay"></canvas>
+        </div>
+
+        <div class="stage-controls">
+          <button id="startBtn" class="btn btn-primary">Start camera</button>
+          <button id="stopBtn" class="btn" disabled>Stop</button>
+          <span class="hint" id="stageHint">Allow camera access to begin.</span>
+        </div>
+      </section>
+
+      <!-- Right column: results -->
+      <section class="card result" aria-label="Translation results">
+        <div class="letter-box">
+          <div class="letter" id="letter" aria-live="polite">–</div>
+          <div class="meter">
+            <div class="meter-fill" id="meterFill"></div>
+          </div>
+          <div class="letter-meta" id="letterMeta">Waiting for a sign…</div>
+        </div>
+
+        <div class="transcript-head">
+          <h2>Transcript</h2>
+          <div class="transcript-actions">
+            <button id="speakBtn" class="btn btn-small">🔊 Speak</button>
+            <button id="copyBtn" class="btn btn-small">Copy</button>
+            <button id="clearBtn" class="btn btn-small">Clear</button>
+          </div>
+        </div>
+        <p class="transcript" id="transcript" aria-live="polite"></p>
+
+        <details class="tips">
+          <summary>How to use</summary>
+          <ul>
+            <li>Center your hand in the frame, about 40 cm from the camera.</li>
+            <li>Hold each sign for about a second until the letter appears.</li>
+            <li>Even lighting helps recognition.</li>
+            <li>Everything runs on your device — video is never sent to a server.</li>
+            <li>Speech output is Bahasa Indonesia, matching the counter staff who listen.</li>
+          </ul>
+        </details>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Jemari · ML Empowerment Build Challenge 3.0</span>
+      <span>100% on-device · MediaPipe + self-trained classifier</span>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
